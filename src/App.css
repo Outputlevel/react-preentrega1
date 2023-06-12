@@ -47,3 +47,15 @@
 
   border-radius: 50px;
 }
+
+.sidebar {
+  background-color: black;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

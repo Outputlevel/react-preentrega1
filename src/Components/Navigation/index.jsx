@@ -4,8 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Categories from '../../categories.json'
+import NavCategories from '../Categories/NavCategories';
 
 function NavbarTest(props) {
+  
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -20,14 +24,9 @@ function NavbarTest(props) {
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Financing</Nav.Link>
             <NavDropdown title="Categories" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">{props.category1}</NavDropdown.Item>
-              <NavDropdown.Item href="#action3.1">{props.category2}</NavDropdown.Item>
-              <NavDropdown.Item href="#action3.2">{props.category3}</NavDropdown.Item>
-              <NavDropdown.Item href="#action3.3">{props.category4}</NavDropdown.Item>
-              {/*<NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-  </NavDropdown.Item>*/}
+              <NavCategories />
+              
+
             </NavDropdown>
             <Nav.Link href="#" disabled>
               Contact Us
