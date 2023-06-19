@@ -1,21 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Database from "../../data.json";
+import Database from "../data.json";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getCars2 } from '../Services'
 
 
-function CardArchive() {   
-  return (
-    
-    Database.map( car => {
-        const cylindersString = (string) => {
-            if(car.Cylinders > 4){
-            return "V"
-            } else {
-                return "I"
-            }
-
-        }
+function CardArchive() {  
+    const dataInventory = Database.map( car => {
         return (
             <div className="col-12 col-md-6 col-lg-4 col-xxl-3">        
                 <Card className="mt-4" >
@@ -30,7 +23,7 @@ function CardArchive() {
                     <ListGroup.Item>Year: {car.Year}</ListGroup.Item>
                     <ListGroup.Item className="capitalize">Body Type: {car.Body_type}</ListGroup.Item>
                     <ListGroup.Item>Odometer: {car.Odometer} km</ListGroup.Item>
-                    <ListGroup.Item>Cylinders: {cylindersString}{car.Cylinders}</ListGroup.Item>
+                    <ListGroup.Item>Cylinders:{car.Cylinders}</ListGroup.Item>
                     <ListGroup.Item>Country: {car.Origin}</ListGroup.Item>
                 </ListGroup>
                 <Card.Body className="d-flex">
@@ -40,6 +33,9 @@ function CardArchive() {
             </div>
         )
         })
+  return (
+    <div className="container mx-auto row">{dataInventory}</div>
+
   );
 }
 

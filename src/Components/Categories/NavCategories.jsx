@@ -1,15 +1,20 @@
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Categories from '../../categories.json'
 
-function NavCategories(){
-    function selectFilter (e) {
-        console.log(e.target.innerHTML)
-    }
+import { Link } from "react-router-dom";
+
+function NavCategories({categories}){
+    
+    
     return (
-        Categories.map(category => {
+        categories.map(category => {
             return(
-                <NavDropdown.Item href="#action-3"  className="capitalize categoryList" onClick={selectFilter}>{category.name}</NavDropdown.Item>
+                <NavDropdown.Item className="capitalize categoryList" onClick={selectFilter} >
+                    <Link to={`/categories/${category.id}`}> {category.name} </Link>
+                    </NavDropdown.Item>
             )
+            function selectFilter (e) {
+                console.log(category.id)
+            }
         })
     )
 }
