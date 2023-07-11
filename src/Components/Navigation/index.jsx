@@ -4,12 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Categories from '../../categories.json'
+
 import NavCategories from '../Categories/NavCategories';
 import WishlistWidget from '../whishlist';
+import { useState, useEffect } from 'react';
 
 function NavbarMain({categories}) {
-  
 
   return (
     <Navbar bg="light" expand="lg">

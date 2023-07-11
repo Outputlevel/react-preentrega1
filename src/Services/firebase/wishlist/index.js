@@ -1,4 +1,4 @@
-import wishlist from '../../wishlist.json'
+import wishlist from '../../../wishlist.json'
 
 const getWishlist = async (id) => {
     return new Promise((resolve, reject) => {

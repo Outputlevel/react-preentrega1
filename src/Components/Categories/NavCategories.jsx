@@ -9,8 +9,8 @@ function NavCategories({categories}){
         categories.map(category => {
             return(
                 <NavDropdown.Item className="capitalize categoryList" onClick={selectFilter} >
-                    <Link to={`/categories/${category.id}`}> {category.name} </Link>
-                    </NavDropdown.Item>
+                    <Link to={`/categories/${category.id}`}> {category.catName} </Link>
+                </NavDropdown.Item>
             )
             function selectFilter (e) {
                 console.log(category.id)

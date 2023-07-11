@@ -1,4 +1,4 @@
-import cars from '../../data.json'
+import cars from '../../../data.json'
 
 const getCars2 = async (id) => {
     return new Promise((resolve, reject) => {

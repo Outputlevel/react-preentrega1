@@ -3,7 +3,8 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useParams, useNavigate } from 'react-router-dom';
 import BtnWishlist from '../buttons/whishlist';
-import {onClickWishlist} from '../../Services'
+import {onClickWishlist} from '../../Services/moks'
+import Image from '../../imgs/comingSoon.png'
 
 
 
@@ -14,7 +15,7 @@ const CarSingle = ({id, Name, Price, Odometer, Cylinders, Origin, Body_type, Yea
         <div className="col-12 col-md-6 col-lg-4 col-xxl-3"> 
             
         <Card key={Name} className="mt-4" >
-        { <Card.Img variant="top" src="imgs/comingSoon.png" /> }
+        { <Card.Img variant="top" src={Image} /> }
         <Card.Body>
             <Card.Title className="uppercase">{Name}</Card.Title>
             <Card.Title>

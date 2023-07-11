@@ -1,4 +1,4 @@
-import categories from '../../categories.json'
+import categories from '../../../categories.json'
 
 const getCategories2 = async () =>  {
     return new Promise((resolve, reject) => {

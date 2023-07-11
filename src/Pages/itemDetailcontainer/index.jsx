@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CarDetail } from "../../Common/itemDetail";
 import { useParams } from "react-router-dom"
-import { getCar } from "../../Services";
+import { getCar } from "../../Services/firebase";
 
 const CarDetailContainer = () => {
     const {id} = useParams()
