@@ -6,21 +6,24 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CarDetailContainer from './Pages/itemDetailcontainer';
 import NavbarMain from './Components/Navigation';
+import {WishlistCounterProvider} from './context/wishlistCounter'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <NavbarMain />
-    <Routes>
-      <Route path="/" element={<App />}></Route>
-      <Route path="/categories" element={<App />}></Route> 
-      <Route path="/categories/:id" element={<App />}></Route>
-      <Route path="/inventory/:id" element={<CarDetailContainer />}></Route>
-      {/*<Route path="/inventory/:id" element={<CarDetail />}></Route>*/}
+<WishlistCounterProvider>
+    <BrowserRouter>
+      <NavbarMain />
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/categories" element={<App />}></Route> 
+        <Route path="/categories/:id" element={<App />}></Route>
+        <Route path="/inventory/:id" element={<CarDetailContainer />}></Route>
+        {/*<Route path="/inventory/:id" element={<CarDetail />}></Route>*/}
 
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>`
+  </WishlistCounterProvider>
 
 );
 

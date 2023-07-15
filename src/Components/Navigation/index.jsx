@@ -4,12 +4,18 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
 import NavCategories from '../Categories/NavCategories';
 import WishlistWidget from '../whishlist';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { getWishlist } from '../../Services/firebase'
+import { WishlistCounterContext } from '../../context/wishlistCounter'
 
 function NavbarMain({categories}) {
+  const {wishlistArr} = useContext(WishlistCounterContext)
+
+
+  {/*const [wishlist, setWishlists] = useState([]) */}
+  
 
   return (
     <Navbar bg="light" expand="lg">
@@ -40,7 +46,8 @@ function NavbarMain({categories}) {
               Contact Us
             </Nav.Link>
           </Nav>
-          <WishlistWidget />
+          {/*<WishlistWidget wishlist={wishlist} /> */}
+          <WishlistWidget counter={wishlistArr}/>
 
 
         </Navbar.Collapse>

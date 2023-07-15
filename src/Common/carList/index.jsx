@@ -1,8 +1,9 @@
 
 import { useParams, useNavigate } from 'react-router-dom';
 import CarSingle from '../carSingle';
+import { onClickWishlist } from '../../Services/firebase';
 
-const CarList = ({ inventory } ) => {
+const CarList = ({ inventory, addWishlist } ) => {
 
     return (
         <div className="container mx-auto row">
@@ -18,6 +19,10 @@ const CarList = ({ inventory } ) => {
                 Body_type = {car.Body_type}
                 Origin={car.Origin}
                 Price={car.Price}
+                onClickBtn={addWishlist}
+                btnText={"Add to Wishlist"}
+                disabled={"hello"}
+
             />
 
         )

@@ -9,6 +9,7 @@ const getCars2 = async () => {
     const docRef = collection(db,  "vehicles")
 
     const snapshot = await getDocs(docRef)
+    
 
     if(snapshot) {
        return snapshot.docs.map( doc => ({ id: doc.id, ...doc.data() })) 
